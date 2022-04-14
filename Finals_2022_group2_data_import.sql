@@ -38,9 +38,9 @@ SHARD KEY `idx_eff_method_12` (`effective_time`,`methodology`)
 
 -- 3.2 creating the pipeline 
 CREATE AGGREGATOR PIPELINE `full_window_price_v2`
-AS LOAD DATA S3 's3://pricing-worker/dar-prod/Historic_Price_File/2022/2'
+AS LOAD DATA S3 's3://..'
 CONFIG '{\"region\": \"us-east-1\"}'
-CREDENTIALS '{"aws_access_key_id": "AKIAR42WX226QWI2QWTO", "aws_secret_access_key": "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"}'
+CREDENTIALS '{"aws_access_key_id": "...", "aws_secret_access_key": "..."}'
 BATCH_INTERVAL 10000
 MAX_PARTITIONS_PER_BATCH 1
 DISABLE OUT_OF_ORDER OPTIMIZATION
@@ -90,9 +90,9 @@ SHARD KEY `idx_ticr_exchange_tradeTime` (`ticker`,`exchangeId`,`TStampTraded`)
 
 -- 4.2 creating the pipeline
 CREATE AGGREGATOR PIPELINE `conversion`
-AS LOAD DATA S3 's3://pricing-worker/dar-prod/conversion/2022/2'
+AS LOAD DATA S3 's3://...'
 CONFIG '{\"region\": \"us-east-1\"}'
-CREDENTIALS '{"aws_access_key_id": "AKIAR42WX226QWI2QWTO", "aws_secret_access_key": "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"}'
+CREDENTIALS '{"aws_access_key_id": "...", "aws_secret_access_key": "..."}'
 BATCH_INTERVAL 10000
 MAX_PARTITIONS_PER_BATCH 1
 DISABLE OUT_OF_ORDER OPTIMIZATION
